@@ -20,7 +20,7 @@ class HomeViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Best Seller', style: Styles.titleMeduim),
+              Text('Best Seller', style: Styles.textStyle20),
               SizedBox(height: 20),
               BestSellerListViewItem()
             ],
