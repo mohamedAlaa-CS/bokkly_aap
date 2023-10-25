@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'widget/book_details_view_body.dart';
 
 class BookDetailsView extends StatelessWidget {
+  static const String routeName = '/bookDetailsView';
   const BookDetailsView({super.key});
 
   @override
