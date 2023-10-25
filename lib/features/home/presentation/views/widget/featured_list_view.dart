@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_list_view_item.dart';
+import 'custom_book_image.dart';
 
 class FeaturedListView extends StatelessWidget {
   const FeaturedListView({super.key});
@@ -13,7 +13,7 @@ class FeaturedListView extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8),
-                child: FeaturedListViewItem(),
+                child: CustomBookImage(),
               )),
     );
   }
