@@ -2,6 +2,7 @@ import 'package:bookly/features/splash/presentation/views/widget/splash_view_bod
 import 'package:flutter/material.dart';
 
 class SplashView extends StatelessWidget {
+  static const String routeName = '/';
   const SplashView({super.key});
 
   @override
