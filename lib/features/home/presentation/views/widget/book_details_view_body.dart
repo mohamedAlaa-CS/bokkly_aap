@@ -1,4 +1,5 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widget/book_rating.dart';
 import 'package:bookly/features/home/presentation/views/widget/custom_book_image.dart';
 import 'package:bookly/features/home/presentation/views/widget/similler_books_list_view.dart';
@@ -8,8 +9,8 @@ import 'book_action.dart';
 import 'custom_book_details_app_bar.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context).size;
@@ -26,25 +27,29 @@ class BookDetailsViewBody extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: mediaQuery.width * .24),
-                    child: const CustomBookImage(
+                    child: CustomBookImage(
                         imageUrl:
-                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52qqyY2Mosgxt-Pt00pZy4TqIhCanFTwyLwC-D0z5&s'),
+                            bookModel.volumeInfo!.imageLinks?.thumbnail ?? ''),
                   ),
                   const SizedBox(height: 43),
-                  const Text(
-                    'The Jungle Book',
+                  Text(
+                    bookModel.volumeInfo!.title ?? '',
                     style: Styles.textStyle30,
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 6),
-                  const Opacity(
+                  Opacity(
                     opacity: .7,
                     child: Text(
-                      'Rudyard Kipling',
+                      bookModel.volumeInfo!.authors?[0] ?? '',
                       style: Styles.textStyle18,
                     ),
                   ),
                   const SizedBox(height: 15),
-                  const BookRating(count:0,rating: 0,mainAxisAlignment:  MainAxisAlignment.center),
+                  BookRating(
+                      count: bookModel.volumeInfo!.ratingsCount ?? 0,
+                      rating: bookModel.volumeInfo!.averageRating ?? 0,
+                      mainAxisAlignment: MainAxisAlignment.center),
                   const SizedBox(height: 30),
                   const BookAction(),
                   const Expanded(child: SizedBox(height: 50)),
