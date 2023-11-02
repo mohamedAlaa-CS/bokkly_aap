@@ -13,7 +13,9 @@ class SimallerListview extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5),
-                child: CustomBookImage(),
+                child: CustomBookImage(
+                    imageUrl:
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52qqyY2Mosgxt-Pt00pZy4TqIhCanFTwyLwC-D0z5&s'),
               )),
     );
   }
