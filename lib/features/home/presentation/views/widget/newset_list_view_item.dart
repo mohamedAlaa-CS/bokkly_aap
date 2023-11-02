@@ -22,7 +22,8 @@ class NewestListViewItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CustomBookImage(
-                imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? ''),
+                imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                    'https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/601082646d6bf4446451b0a4_6002086f72b72717ae01d954_google-doc-error-message.png'),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
