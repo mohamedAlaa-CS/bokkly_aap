@@ -1,3 +1,4 @@
+import 'package:bookly/features/search/presentation/view/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -18,7 +19,9 @@ class CustomAppBar extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                showSearch(context: context, delegate: SearchView());
+              },
               icon: const Icon(FontAwesomeIcons.magnifyingGlass))
         ],
       ),

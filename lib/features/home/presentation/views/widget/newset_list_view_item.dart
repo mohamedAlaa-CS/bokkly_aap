@@ -40,8 +40,10 @@ class NewestListViewItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    bookModel.volumeInfo!.authors![0],
+                    bookModel.volumeInfo?.authors?[0] ?? '',
                     style: Styles.textStyle16,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 8),
                   Row(
