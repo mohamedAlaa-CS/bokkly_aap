@@ -51,7 +51,7 @@ class BookDetailsViewBody extends StatelessWidget {
                       rating: bookModel.volumeInfo!.averageRating ?? 0,
                       mainAxisAlignment: MainAxisAlignment.center),
                   const SizedBox(height: 30),
-                   BookAction(urlBook: bookModel.volumeInfo!.previewLink ?? '',),
+                  BookAction(urlBook: bookModel.volumeInfo!.previewLink ?? ''),
                   const Expanded(child: SizedBox(height: 50)),
                   Align(
                     alignment: Alignment.centerLeft,
