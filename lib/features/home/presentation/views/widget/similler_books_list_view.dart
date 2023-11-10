@@ -23,7 +23,7 @@ class SimallerListview extends StatelessWidget {
                       child: CustomBookImage(
                           imageUrl: state.books[index].volumeInfo?.imageLinks
                                   ?.thumbnail ??
-                              ''),
+                              'https://developers.google.com/static/maps/documentation/streetview/images/error-image-generic.png'),
                     )),
           );
         } else if (state is SimailerBooksFailuer) {
