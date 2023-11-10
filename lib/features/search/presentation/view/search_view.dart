@@ -1,8 +1,8 @@
 import 'package:bookly/core/widgets/custom_error_widget.dart';
-import 'package:bookly/core/widgets/custom_loading_indacator_widget.dart';
 import 'package:bookly/features/search/presentation/manager/search/search_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../../home/presentation/views/widget/newset_list_view_item.dart';
 
@@ -45,7 +45,9 @@ class SearchView extends SearchDelegate {
         } else if (state is SearchFailure) {
           return CustomErrorWidget(error: state.errorMessage);
         }
-        return const CustomLoadingIndecator();
+        return Center(
+            child:
+                Lottie.asset('assets/images/Animation - 1699475878861.json'));
       },
     );
   }
@@ -75,7 +77,9 @@ class SearchView extends SearchDelegate {
         } else if (state is SearchFailure) {
           CustomErrorWidget(error: state.errorMessage);
         }
-        return const CustomLoadingIndecator();
+        return Center(
+            child: Lottie.asset('assets/images/Animation - 1699476364073.json',
+                width: 260));
       },
     );
   }

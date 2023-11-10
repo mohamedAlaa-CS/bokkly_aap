@@ -1,8 +1,8 @@
-import 'package:bookly/core/utils/assets.dart';
-import 'package:bookly/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
 
+import '../../../../home/presentation/views/home_view.dart';
 import 'sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -35,7 +35,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(AssetsData.logoImage),
+        Lottie.asset(
+          'assets/images/Animation - 1699474662611.json',
+        ),
         const SizedBox(height: 5),
         SlidingText(slidingAnimation: slidingAnimation)
       ],
@@ -46,7 +48,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
     slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)
+        Tween<Offset>(begin: const Offset(0, 10), end: const Offset(0, -7))
             .animate(animationController);
     animationController.forward();
   }
@@ -55,7 +57,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        GoRouter.of(context).push(HomeView.routeName);
+          GoRouter.of(context).push(HomeView.routeName);
       },
     );
   }
